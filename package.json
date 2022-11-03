@@ -1,0 +1,42 @@
+{
+  "name": "@cncsc/semantic-release-config",
+  "version": "0.0.0-development",
+  "description": "Shared configurations for semantic-release.",
+  "main": "base/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cncsc/semantic-release-config.git"
+  },
+  "author": {
+    "name": "Cloud-Native Cybersecurity Collective",
+    "email": "info@cncsc.io",
+    "url": "https://www.cncsc.io/"
+  },
+  "contributors": [
+    {
+      "name": "Armor Defense Inc.",
+      "email": "info@armor.com",
+      "url": "https://www.armor.com/"
+    }
+  ],
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "@cncsc/cncsc-changelog-convention": "^1.0.0",
+    "@semantic-release/exec": "^6.0.3",
+    "semantic-release": "~19.0.5"
+  },
+  "devDependencies": {
+    "@cncsc/eslint-config": "^0.1.0",
+    "@cncsc/cncsc-changelog-convention": "^1.0.0",
+    "@semantic-release/exec": "^6.0.3",
+    "eslint": "^8.26.0",
+    "marked": "^4.0.12",
+    "semantic-release": "~19.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

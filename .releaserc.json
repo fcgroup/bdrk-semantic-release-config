@@ -1,0 +1,62 @@
+{
+  "tagFormat": "${version}",
+  "branches": [
+    "master",
+    "main",
+    {
+      "name": "dev",
+      "prerelease": "alpha"
+    }
+  ],
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "config": "@cncsc/cncsc-changelog-convention",
+        "releaseRules": [{
+          "type": "breaking",
+          "release": "major"
+        }, {
+          "type": "major",
+          "release": "major"
+        }, {
+          "type": "feat",
+          "release": "minor"
+        }, {
+          "type": "feature",
+          "release": "minor"
+        }, {
+          "type": "minor",
+          "release": "minor"
+        }, {
+          "release": "patch"
+        }]
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "config": "@cncsc/cncsc-changelog-convention"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "successComment": false,
+        "failComment": false
+      }
+    ],
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": true
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "successCmd": "echo \"${nextRelease.version}\" > .semver"
+      }
+    ]
+  ]
+}
