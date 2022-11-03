@@ -1,4 +1,3 @@
 .pre-commit-config.yaml
 .github/
-.releaserc.json
 .eslintrc.json
