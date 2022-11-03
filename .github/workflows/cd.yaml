@@ -16,9 +16,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: https://registry.npmjs.org
       - run: npm ci
+      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}" > .npmrc
       - run: npx semantic-release --dry-run false --ci false
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN_BASIC }}
-          NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
