@@ -1,42 +1,35 @@
 {
-  "name": "@cncsc/semantic-release-config",
+  "name": "@bdrk/semantic-release-config",
   "version": "0.0.0-development",
   "description": "Shared configurations for semantic-release.",
   "main": "base/index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:cncsc/semantic-release-config.git"
+    "url": "git@github.com:fcgroup/bdrk-semantic-release-config.git"
   },
   "author": {
-    "name": "Cloud-Native Cybersecurity Collective",
-    "email": "info@cncsc.io",
-    "url": "https://www.cncsc.io/"
+    "name": "Bedrock Project",
+    "email": "info@bdrk.dev",
+    "url": "https://bdrk.dev/"
   },
-  "contributors": [
-    {
-      "name": "Armor Defense Inc.",
-      "email": "info@armor.com",
-      "url": "https://www.armor.com/"
-    }
-  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "lint": "eslint ."
   },
   "license": "Apache-2.0",
   "peerDependencies": {
-    "@cncsc/cncsc-changelog-convention": "^1.0.0",
+    "@bdrk/changelog-convention": "^1.0.0",
     "@semantic-release/exec": "^6.0.3",
-    "semantic-release": "^21.0.7"
+    "semantic-release": "^23.0.8"
   },
   "devDependencies": {
-    "@cncsc/cncsc-changelog-convention": "^1.0.0",
+    "@bdrk/changelog-convention": "^1.0.0",
     "@cncsc/eslint-config": "^0.1.0",
     "@semantic-release/exec": "^6.0.3",
     "eslint": "^8.26.0",
     "marked": "^4.0.12",
-    "semantic-release": "^21.0.7"
-  },
-  "publishConfig": {
-    "access": "public"
+    "semantic-release": "^23.0.8"
   }
 }

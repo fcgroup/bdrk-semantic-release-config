@@ -1,21 +1,21 @@
 # semantic-release-config
 
 Shareable configurations for [semantic-release](https://www.npmjs.com/package/semantic-release) with
-CNCSC's conventions for branching strategy and release note generation.
+Bedrock's conventions for branching strategy and release note generation.
 
 ## Usage
 
 Install the NPM package in your project:
 
 ```bash
-npm install --save-dev @cncsc/semantic-release-config
+npm install --save-dev @bdrk/semantic-release-config
 ```
 
 Then, in your `.releaserc.json`, remove any redundant configuration and replace it with:
 
 ```json
 {
-  "extends": "@cncsc/semantic-release-config/base"
+  "extends": "@bdrk/semantic-release-config/base"
 }
 ```
 
@@ -26,7 +26,7 @@ projects that _do publish their artifacts to NPM_, choose the `npm` submodule in
 
 ```json
 {
-  "extends": "@cncsc/semantic-release-config/npm"
+  "extends": "@bdrk/semantic-release-config/npm"
 }
 ```
 
@@ -36,7 +36,7 @@ For projects that do not publish to npm but _do publish artifacts with GitHub re
 
 ```json
 {
-  "extends": "@cncsc/semantic-release-config/assets"
+  "extends": "@bdrk/semantic-release-config/assets"
 }
 ```
 

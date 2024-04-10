@@ -12,7 +12,7 @@
     [
       "@semantic-release/commit-analyzer",
       {
-        "config": "@cncsc/cncsc-changelog-convention",
+        "config": "@bdrk/changelog-convention",
         "releaseRules": [{
           "type": "breaking",
           "release": "major"
@@ -36,7 +36,7 @@
     [
       "@semantic-release/release-notes-generator",
       {
-        "config": "@cncsc/cncsc-changelog-convention"
+        "config": "@bdrk/changelog-convention"
       }
     ],
     [
