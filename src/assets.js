@@ -1,7 +1,6 @@
-const fs = require('fs');
-const { getPackageConfig, findPlugin } = require('../lib/utils');
-
-const config = require('../base/index');
+import { existsSync } from 'fs';
+import { getPackageConfig, findPlugin } from './utils.js';
+import { config } from './base.js';
 
 function getAssets() {
   const assets = [];
@@ -12,11 +11,11 @@ function getAssets() {
   }
 
   const packageAssets = Array.isArray(packageConf.assets) ? packageConf.assets : [];
-  packageAssets.filter(asset => !fs.existsSync(asset.path)).forEach(asset =>  {
+  packageAssets.filter(asset => !existsSync(asset.path)).forEach(asset =>  {
     console.warn(`Skipping assets: ${JSON.stringify(asset)}`);
   });
 
-  packageAssets.filter(asset => fs.existsSync(asset.path)).forEach(asset => {
+  packageAssets.filter(asset => existsSync(asset.path)).forEach(asset => {
     console.debug(`Adding assets: ${JSON.stringify(asset)}`);
     assets.push(asset);
   });
@@ -24,7 +23,7 @@ function getAssets() {
   return assets;
 }
 
-function updateConfig(configuration) {
+function buildConfig(configuration) {
   const pluginName = '@semantic-release/github';
   const githubPlugin = findPlugin(configuration.plugins, pluginName);
   if (!githubPlugin || githubPlugin.length !== 2) {
@@ -34,7 +33,10 @@ function updateConfig(configuration) {
 
   const assets = getAssets();
   githubPlugin[1].assets = [...assets, ...(githubPlugin[1].assets || [])];
+
+  return configuration;
 }
 
-updateConfig(config);
-module.exports = config;
+// Downstream ESM loader requires default export.
+// eslint-disable-next-line import/no-default-export
+export default buildConfig(config);

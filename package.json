@@ -2,7 +2,10 @@
   "name": "@bdrk/semantic-release-config",
   "version": "0.0.0-development",
   "description": "Shared configurations for semantic-release.",
-  "main": "base/index.js",
+  "type": "module",
+  "files": [
+    "src"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:fcgroup/bdrk-semantic-release-config.git"
