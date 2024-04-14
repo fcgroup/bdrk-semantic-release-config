@@ -36,7 +36,8 @@
     [
       "@semantic-release/release-notes-generator",
       {
-        "config": "@bdrk/changelog-convention"
+        "config": "@bdrk/changelog-convention",
+        "issueUrlPrefix": "https://fritz-consulting.atlassian.net/browse/"
       }
     ],
     [
