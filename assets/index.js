@@ -1,6 +1,6 @@
 import { existsSync } from 'fs';
-import { getPackageConfig, findPlugin } from './utils.js';
-import { config } from './base.js';
+import { getPackageConfig, findPlugin } from '../lib/utils.js';
+import { config } from '../base/index.js';
 
 function getAssets() {
   const assets = [];

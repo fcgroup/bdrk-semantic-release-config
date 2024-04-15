@@ -4,12 +4,15 @@
   "description": "Shared configurations for semantic-release.",
   "type": "module",
   "exports": {
-    ".": "./src/base.js",
-    "./npm": "./src/npm.js",
-    "./assets": "./src/assets.js"
+    "./base": "./base/index.js",
+    "./npm": "./npm/index.js",
+    "./assets": "./assets/index.js"
   },
   "files": [
-    "src"
+    "base",
+    "npm",
+    "assets",
+    "lib"
   ],
   "repository": {
     "type": "git",

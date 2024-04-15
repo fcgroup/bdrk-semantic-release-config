@@ -1,4 +1,4 @@
-import { config } from './npm.js';
+import { config } from '../npm/index.js';
 
 function buildConfig(configuration) {
   for (const plugin of configuration.plugins) {
