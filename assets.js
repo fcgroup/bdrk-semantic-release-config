@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { getPackageConfig, findPlugin } = require('./utils.cjs');
+const { getPackageConfig, findPlugin } = require('./utils.js');
 
 const config = require('./base.js');
 
