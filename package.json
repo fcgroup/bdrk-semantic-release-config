@@ -21,7 +21,7 @@
     "access": "public"
   },
   "scripts": {
-    "lint": "eslint . --ext .cjs"
+    "lint": "eslint ."
   },
   "license": "Apache-2.0",
   "peerDependencies": {
