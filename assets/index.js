@@ -23,9 +23,11 @@ function getAssets() {
   return assets;
 }
 
-function buildConfig(configuration) {
+// Downstream ESM loader requires default export.
+// eslint-disable-next-line import/no-default-export
+export default function buildConfig() {
   const pluginName = '@semantic-release/github';
-  const githubPlugin = findPlugin(configuration.plugins, pluginName);
+  const githubPlugin = findPlugin(config.plugins, pluginName);
   if (!githubPlugin || githubPlugin.length !== 2) {
     // no configuration - this should not happen as base should set a configuration for this plugin
     return;
@@ -34,9 +36,5 @@ function buildConfig(configuration) {
   const assets = getAssets();
   githubPlugin[1].assets = [...assets, ...(githubPlugin[1].assets || [])];
 
-  return configuration;
+  return config;
 }
-
-// Downstream ESM loader requires default export.
-// eslint-disable-next-line import/no-default-export
-export default buildConfig(config);

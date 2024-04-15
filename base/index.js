@@ -1,15 +1,13 @@
 import { config } from '../npm/index.js';
 
-function buildConfig(configuration) {
-  for (const plugin of configuration.plugins) {
+// Downstream ESM loader requires default export.
+// eslint-disable-next-line import/no-default-export
+export default function buildConfig() {
+  for (const plugin of config.plugins) {
     if (plugin[0] === '@semantic-release/npm') {
       plugin[1].npmPublish = false;
     }
   }
 
-  return configuration;
+  return config;
 }
-
-// Downstream ESM loader requires default export.
-// eslint-disable-next-line import/no-default-export
-export default buildConfig(config);
