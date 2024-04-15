@@ -2,17 +2,11 @@
   "name": "@bdrk/semantic-release-config",
   "version": "0.0.0-development",
   "description": "Shared configurations for semantic-release.",
-  "type": "module",
-  "exports": {
-    "./base": "./base/index.js",
-    "./npm": "./npm/index.js",
-    "./assets": "./assets/index.js"
-  },
+  "type": "commonjs",
+  "main": "base.js",
   "files": [
-    "base",
-    "npm",
-    "assets",
-    "lib"
+    ".releaserc.json",
+    "*.cjs"
   ],
   "repository": {
     "type": "git",
@@ -31,12 +25,12 @@
   },
   "license": "Apache-2.0",
   "peerDependencies": {
-    "@bdrk/changelog-convention": "^2.1.0",
+    "@bdrk/changelog-convention": "^2.1.1",
     "@semantic-release/exec": "^6.0.3",
     "semantic-release": "^23.0.8"
   },
   "devDependencies": {
-    "@bdrk/changelog-convention": "^2.1.0",
+    "@bdrk/changelog-convention": "^2.1.1",
     "@cncsc/eslint-config": "^0.1.0",
     "@semantic-release/exec": "^6.0.3",
     "eslint": "^8.26.0",

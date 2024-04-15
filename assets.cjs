@@ -1,6 +1,7 @@
-import { existsSync } from 'fs';
-import { getPackageConfig, findPlugin } from '../lib/utils.js';
-import { config } from '../base/index.js';
+const fs = require('fs');
+const { getPackageConfig, findPlugin } = require('./utils.js');
+
+const config = require('./base.js');
 
 function getAssets() {
   const assets = [];
@@ -11,11 +12,11 @@ function getAssets() {
   }
 
   const packageAssets = Array.isArray(packageConf.assets) ? packageConf.assets : [];
-  packageAssets.filter(asset => !existsSync(asset.path)).forEach(asset =>  {
+  packageAssets.filter(asset => !fs.existsSync(asset.path)).forEach(asset =>  {
     console.warn(`Skipping assets: ${JSON.stringify(asset)}`);
   });
 
-  packageAssets.filter(asset => existsSync(asset.path)).forEach(asset => {
+  packageAssets.filter(asset => fs.existsSync(asset.path)).forEach(asset => {
     console.debug(`Adding assets: ${JSON.stringify(asset)}`);
     assets.push(asset);
   });
@@ -23,11 +24,9 @@ function getAssets() {
   return assets;
 }
 
-// Downstream ESM loader requires default export.
-// eslint-disable-next-line import/no-default-export
-export default function buildConfig() {
+function updateConfig(configuration) {
   const pluginName = '@semantic-release/github';
-  const githubPlugin = findPlugin(config.plugins, pluginName);
+  const githubPlugin = findPlugin(configuration.plugins, pluginName);
   if (!githubPlugin || githubPlugin.length !== 2) {
     // no configuration - this should not happen as base should set a configuration for this plugin
     return;
@@ -35,6 +34,7 @@ export default function buildConfig() {
 
   const assets = getAssets();
   githubPlugin[1].assets = [...assets, ...(githubPlugin[1].assets || [])];
-
-  return config;
 }
+
+updateConfig(config);
+module.exports = config;
