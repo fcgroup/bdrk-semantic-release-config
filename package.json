@@ -6,7 +6,7 @@
   "main": "base.js",
   "files": [
     ".releaserc.json",
-    "*.cjs"
+    "*.js"
   ],
   "repository": {
     "type": "git",
