@@ -1,1 +1,1 @@
-module.exports = require('./filter.js')(require('../assets.js'));
+module.exports = require('./_filter.js')(require('../assets.js'));

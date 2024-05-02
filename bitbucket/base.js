@@ -1,1 +1,1 @@
-module.exports = require('./filter.js')(require('../base.js'));
+module.exports = require('./_filter.js')(require('../base.js'));
