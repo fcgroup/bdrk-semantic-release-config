@@ -4,7 +4,7 @@ const path = require('path');
 function findPlugin(plugins, pluginName) {
   // plugins can be a string (just the name) or a tuple of string and configuration object
   const index = plugins.findIndex(plugin =>
-    // eslint-disable-next-line comma-dangle
+    // eslint-disable-next-line @stylistic/comma-dangle
     Array.isArray(plugin) ? plugin[0] === pluginName : plugin === pluginName
   );
 

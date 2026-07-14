@@ -26,16 +26,18 @@
   },
   "license": "Apache-2.0",
   "peerDependencies": {
-    "@bdrk/changelog-convention": "^2.1.1",
+    "@bdrk/changelog-convention": "^2.1.7",
     "@semantic-release/exec": "^7.1.0",
     "semantic-release": "^25.0.5"
   },
   "devDependencies": {
-    "@bdrk/changelog-convention": "^2.1.1",
-    "@bdrk/eslint-config": "^1.0.0",
+    "@bdrk/changelog-convention": "^2.1.7",
+    "@bdrk/eslint-config": "^2.0.0",
     "@semantic-release/exec": "^7.1.0",
-    "eslint": "^8.26.0",
-    "marked": "^4.0.12",
+    "eslint": "^10.7.0",
     "semantic-release": "^25.0.5"
+  },
+  "allowScripts": {
+    "unrs-resolver@1.12.2": true
   }
 }
