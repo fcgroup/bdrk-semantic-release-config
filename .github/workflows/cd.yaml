@@ -9,8 +9,9 @@ permissions:
   id-token: write
 
 jobs:
-  on-success:
+  semantic_release:
     name: Semantic Release
     uses: fcgroup/actions/.github/workflows/semantic-release.yaml@main
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     secrets:
       GIT_TOKEN_BASIC: ${{ secrets.GIT_TOKEN_BASIC }}
